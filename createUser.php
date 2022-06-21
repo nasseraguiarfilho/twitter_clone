@@ -5,7 +5,7 @@
     $db = new Db();
     $db->connect();
 
-    //protection variables from injection by quoting them
+    //protect variables from injection by quoting them
     $usuario = $db -> quote($_POST['usuario']);
     $senha = $db -> quote($_POST['senha']);
     $email = $db -> quote($_POST['email']);

@@ -49,8 +49,10 @@ class Db {
      * @return bool False on failure / array Database rows on success
      */
     public function select($query) {
+
         $rows = array();
         $result = $this -> query($query);
+
         if($result === false) {
             return false;
         }
