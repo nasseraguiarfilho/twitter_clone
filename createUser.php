@@ -12,9 +12,10 @@
 
 
     if(usernameFreeToUse($usuario)) {
-      echo sendQuery();
+      sendQuery();
+      echo "User created successfully";
     } else {
-        echo "Usuário já existe";
+        echo "User already exists";
     }
     
 
