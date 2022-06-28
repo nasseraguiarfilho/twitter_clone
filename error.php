@@ -46,26 +46,9 @@
 
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <h3>Inscreva-se já.</h3>
+            <h3>Please login!</h3>
             <br />
-            <form method="post" action="createUser.php" id="formCadastrarse">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário"
-                        required="requiored">
-                </div>
-
-                <div class="form-group">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email"
-                        required="requiored">
-                </div>
-
-                <div class="form-group">
-                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha"
-                        required="requiored">
-                </div>
-
-                <button type="submit" class="btn btn-primary form-control" id="createUser">Inscreva-se</button>
-            </form>
+            <h3>Something went wrong =/ Maybe this happened: <?php echo $_GET['erro']; ?></h3>
         </div>
         <div class="col-md-4"></div>
 

@@ -19,9 +19,7 @@
     <!-- bootstrap - link cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-    <script>
-    // código javascript						
-    </script>
+    <script src="script.js"></script>
 
 </head>
 

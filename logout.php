@@ -1,3 +1,11 @@
+<?php
+
+    session_start();
+    unset($_SESSION['usuario']);
+    session_destroy();
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 
@@ -46,26 +54,8 @@
 
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <h3>Inscreva-se já.</h3>
-            <br />
-            <form method="post" action="createUser.php" id="formCadastrarse">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário"
-                        required="requiored">
-                </div>
+            <h3>See you soon! ;)</h3>
 
-                <div class="form-group">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email"
-                        required="requiored">
-                </div>
-
-                <div class="form-group">
-                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha"
-                        required="requiored">
-                </div>
-
-                <button type="submit" class="btn btn-primary form-control" id="createUser">Inscreva-se</button>
-            </form>
         </div>
         <div class="col-md-4"></div>
 
