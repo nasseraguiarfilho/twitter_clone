@@ -7,8 +7,10 @@
 
     //protect variables from injection by quoting them
     $usuario = $db -> quote($_POST['usuario']);
-    $senha = $db -> quote($_POST['senha']);
     $email = $db -> quote($_POST['email']);
+    $senha = md5($_POST['senha']);
+    $senha = $db -> quote($senha);
+
 
 
     if(usernameFreeToUse($usuario)) {
