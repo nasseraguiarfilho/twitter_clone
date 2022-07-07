@@ -18,6 +18,7 @@ $senha = $db -> quote($senha);
         header('Location: home.php');
     } else {
         echo $senha;
+        echo "test";
     }
 
     function loginSuccessful() {

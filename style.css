@@ -1,12 +1,33 @@
-.brand-centered {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
+#leftPanel > li {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 50px;
+  color: black;
 }
-.navbar-brand {
-  display: flex;
-  align-items: center;
+
+.b1 {
+  background: grey;
+  width: 33.333%;
+  height: 100px;
+  text-align: center;
+}
+
+.home {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  color: black;
+}
+
+#tweet {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  width: 505px;
+  height: 77px;
+  text-align: center;
+  margin: auto;
+  display: block;
+  border: 0;
 }
