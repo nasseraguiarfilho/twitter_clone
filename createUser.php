@@ -13,11 +13,12 @@
 
 
 
-    if(usernameFreeToUse($usuario)) {
+    if(usernameFreeToUse($usuario) && emailFreeToUse($email)) {
       sendQuery();
       echo "User created successfully";
     } else {
         echo "User already exists";
+
     }
     
 
@@ -31,6 +32,16 @@
     function usernameFreeToUse($usuario) {
         global $db, $usuario;
         $result = $db -> query("SELECT * FROM usuarios WHERE usuario = $usuario");
+        var_dump($result);
+        if($result -> num_rows > 0) {
+            return false;
+        }
+        return true;
+    }
+
+    function emailFreeToUse($email) {
+        global $db, $email;
+        $result = $db -> query("SELECT * FROM usuarios WHERE email = $email");
         if($result -> num_rows > 0) {
             return false;
         }
