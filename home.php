@@ -7,6 +7,19 @@
 
     $user = $_SESSION['usuario'];
     $user = str_replace(['"',"'"], "", $user);
+
+    function tweets() {
+        for($i = 0; $i < 4; $i++){
+            htmlForTweet();
+          }
+    }
+
+    function htmlForTweet() {
+        //TODO get the tweets from his friends and post on his homepage
+        echo '
+           
+            ';
+    }
     
 
 ?>
@@ -29,6 +42,11 @@
     <?php include 'style.css';
     ?>
     </style>
+
+    <script>
+    <?php include 'scriptHome.js'; ?>
+    </script>
+
 
 </head>
 
@@ -64,16 +82,21 @@
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="What's going on right now?"
-                            maxlength="140">
+                    <form id="form_tweet" class="input-group">
+                        <input type="text" class="form-control" placeholder="Whats going on right now?" maxlength="140"
+                            id="text_tweet" name="text_tweet">
                         <span class="input-group-btn">
-                            <button class="btn btn-primary" type="button">Tweet</button>
+                            <button class="btn btn-primary" type="button" id="button_tweet">Tweet</button>
                         </span>
-                    </div>
+                    </form>
                 </div>
             </div>
+            <div id="tweets" class="list-group">
+            </div>
+
         </div>
+
+
 
         <div class="col-md-3">
             <div class="panel panel-default">
