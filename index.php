@@ -1,7 +1,6 @@
 <?php
 
-    $error = isset($_GET['erro']) ? $_GET['erro'] : "noError";
-
+    $error = isset($_GET['erro']) ? $_GET['erro'] : "0";
 
 ?>
 
@@ -19,8 +18,14 @@
     <!-- bootstrap - link cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-    <script src="script.js"></script>
+    <style>
+    <?php include 'style.css';
+    ?>
+    </style>
 
+    <script>
+    <?php include 'script.js'; ?>
+    </script>
 </head>
 
 
@@ -39,13 +44,12 @@
             <div id=" navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="inscrevase.php">Inscrever-se</a></li>
-                    <li class="<?= $error === "loginUnsuccessful" ? 'open' : '' ?>"><a id="entrar" data-target="#"
-                            href="#" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Entrar</a>
+                    <li class="<?= $error == "1" ? 'open' : '' ?>"><a id="entrar" data-target="#" href="#"
+                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entrar</a>
                         <ul class="dropdown-menu" aria-labelledby="entrar">
                             <div class="col-md-12">
                                 <p>Você possui uma conta?</h3><br />
-                                <form method="post" action="validateUser.php" id="formLogin">
+                                <form method="post" action="validateUser.php" id="formLogin" name="formLogin">
                                     <div class="form-group"><input type="text" class="form-control" id="campo_usuario"
                                             name="usuario" placeholder="Usuário" /></div>
                                     <div class="form-group"><input type="password" class="form-control red"
@@ -53,7 +57,7 @@
                                         type="buttom" class="btn btn-primary" id="btn_login">Entrar</button><br /><br />
                                 </form>
                                 <?php
-                                    if($error === "loginUnsuccessful") {
+                                    if($error == "1") {
                                         echo "<p class='text-danger'>Usuário ou senha inválidos</p>";
                                     }
                                 ?>
