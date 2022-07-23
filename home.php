@@ -58,7 +58,11 @@
             <div class="navbar-header">
                 <div style="padding: 4px 0px 4px 0px"><a href="home.php"><img src="imagens/icone_twitter.png"></a></div>
             </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.php">Logout</a></li>
+            </ul>
         </div>
+
     </nav>
 
     <div class="container">
