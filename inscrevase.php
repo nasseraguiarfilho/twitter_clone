@@ -12,6 +12,15 @@
     <!-- bootstrap - link cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+    <style>
+    <?php include 'style.css';
+    ?>
+    </style>
+
+    <script>
+    <?php include 'script.js'; ?>
+    </script>
+
 </head>
 
 <body>
@@ -27,12 +36,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div style="padding: 4px 0px 4px 0px"><img src="imagens/icone_twitter.png"></div>
+                <div style="padding: 4px 0px 4px 0px"><a href="index.php"><img src="imagens/icone_twitter.png"></a>
+                </div>
             </div>
 
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php">Voltar para Home</a></li>
+                <ul class="nav navbar-nav navbar-right navbaritems">
+                    <li><a href="index.php">Home</a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -46,11 +56,13 @@
 
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <h3>Inscreva-se já.</h3>
+            <div class="text-center">
+                <h3>Sign up to see the latest news!</h3>
+            </div>
             <br />
             <form method="post" action="createUser.php" id="formCadastrarse">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário"
+                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Username"
                         required="requiored">
                 </div>
 
@@ -60,11 +72,11 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha"
+                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Password"
                         required="requiored">
                 </div>
 
-                <button type="submit" class="btn btn-primary form-control" id="createUser">Inscreva-se</button>
+                <button type="submit" class="btn btn-primary form-control" id="createUser">Sign up</button>
             </form>
         </div>
         <div class="col-md-4"></div>

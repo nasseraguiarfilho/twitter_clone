@@ -35,3 +35,17 @@
     "Lucida Sans", Arial, sans-serif;
   word-break: break-all;
 }
+
+.loginMenu {
+  width: 300px;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.navbaritems {
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}

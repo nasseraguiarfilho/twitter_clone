@@ -42,23 +42,28 @@
                 <div style="padding: 4px 0px 4px 0px"><img src="imagens/icone_twitter.png"></div>
             </div>
             <div id=" navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="inscrevase.php">Inscrever-se</a></li>
+                <ul class="nav navbar-nav navbar-right navbaritems">
+                    <li><a href="inscrevase.php">New User</a></li>
                     <li class="<?= $error == "1" ? 'open' : '' ?>"><a id="entrar" data-target="#" href="#"
-                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entrar</a>
-                        <ul class="dropdown-menu" aria-labelledby="entrar">
+                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In</a>
+                        <ul class="dropdown-menu loginMenu" aria-labelledby="entrar">
                             <div class="col-md-12">
-                                <p>Você possui uma conta?</h3><br />
+                                <p>
+                                <h4>Do you have an account?</h4>
+                                </p>
                                 <form method="post" action="validateUser.php" id="formLogin" name="formLogin">
                                     <div class="form-group"><input type="text" class="form-control" id="campo_usuario"
-                                            name="usuario" placeholder="Usuário" /></div>
+                                            name="usuario" placeholder="Username" /></div>
                                     <div class="form-group"><input type="password" class="form-control red"
-                                            id="campo_senha" name="senha" placeholder="Senha" /></div><button
-                                        type="buttom" class="btn btn-primary" id="btn_login">Entrar</button><br /><br />
+                                            id="campo_senha" name="senha" placeholder="Password" /></div>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="button" class="btn btn-primary"
+                                            id="btn_login">Login</button><br /><br />
+                                    </div>
                                 </form>
                                 <?php
                                     if($error == "1") {
-                                        echo "<p class='text-danger'>Usuário ou senha inválidos</p>";
+                                        echo "<p class='text-danger'>Username or password invalid!</p>";
                                     }
                                 ?>
                         </ul>
@@ -68,12 +73,12 @@
             <!-- < !--/.nav-collapse -->
         </div>
     </nav>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Bem vindo ao twitter clone</h1>
-            <p>Veja o que está acontecendo agora...</p>
-        </div>
-        <div class="clearfix"></div>
+    <div class="container welcome">
+        <h1>Welcome to Twitter!</h1>
+        <p>
+        <h4>See what's going on right now..</h3>
+            </p>
+            <div class="clearfix"></div>
     </div>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
