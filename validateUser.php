@@ -17,8 +17,7 @@ $senha = $db -> quote($senha);
     if(loginSuccessful()) {
         header('Location: home.php');
     } else {
-        echo $senha;
-        echo "test";
+        header('Location: index.php?erro=1');
     }
 
     function loginSuccessful() {

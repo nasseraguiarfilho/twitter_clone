@@ -6,7 +6,9 @@ $(document).ready(function () {
         type: "POST",
         url: "include_tweet.php",
         data: $("#form_tweet").serialize(),
-        success: function () {},
+        success: function () {
+          atualizaTweet();
+        },
       });
     }
   });

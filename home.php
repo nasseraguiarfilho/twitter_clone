@@ -56,7 +56,7 @@
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <div style="padding: 4px 0px 4px 0px"><img src="imagens/icone_twitter.png"></div>
+                <div style="padding: 4px 0px 4px 0px"><a href="home.php"><img src="imagens/icone_twitter.png"></a></div>
             </div>
         </div>
     </nav>

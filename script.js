@@ -1,23 +1,22 @@
 $(document).ready(function () {
   $("#btn_login").click(function () {
-    usernameVerification();
-    passwordVerification();
+    if (usernameEmpty() || passwordEmpty()) return false; //don't let page reload
   });
 
-  function usernameVerification() {
+  function usernameEmpty() {
     if ($("#campo_usuario").val() == "") {
       $("#campo_senha").css("border", "1px solid #ced4da");
       $("#campo_usuario").focus();
       $("#campo_usuario").css("border", "1px solid red");
-      return false;
+      return true;
     }
   }
-  function passwordVerification() {
+  function passwordEmpty() {
     if ($("#campo_senha").val() == "") {
       $("#campo_usuario").css("border", "1px solid #ced4da");
       $("#campo_senha").focus();
       $("#campo_senha").css("border", "1px solid red");
-      return false;
+      return true;
     }
   }
 });
