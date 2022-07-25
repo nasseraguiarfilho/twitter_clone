@@ -57,15 +57,11 @@
                                     <div class="form-group"><input type="password" class="form-control red"
                                             id="campo_senha" name="senha" placeholder="Password" /></div>
                                     <div class="d-flex justify-content-end">
-                                        <button type="button" class="btn btn-primary"
-                                            id="btn_login">Login</button><br /><br />
+                                        <button type="submit" class="btn btn-primary" id="btn_login">Login</button>
+                                        <span class="attention"></span>
                                     </div>
                                 </form>
-                                <?php
-                                    if($error == "1") {
-                                        echo "<p class='text-danger'>Username or password invalid!</p>";
-                                    }
-                                ?>
+
                         </ul>
                     </li>
                 </ul>

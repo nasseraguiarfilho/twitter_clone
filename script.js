@@ -1,6 +1,8 @@
 $(document).ready(function () {
   $("#btn_login").click(function () {
-    if (usernameEmpty() || passwordEmpty()) return false; //don't let page reload
+    if (usernameEmpty() || passwordEmpty()) {
+      return false;
+    } //don't let page reload if fields are empty
   });
 
   function usernameEmpty() {
@@ -8,6 +10,7 @@ $(document).ready(function () {
       $("#campo_senha").css("border", "1px solid #ced4da");
       $("#campo_usuario").focus();
       $("#campo_usuario").css("border", "1px solid red");
+      $(".attention").text("Please provide username!");
       return true;
     }
   }
@@ -16,6 +19,7 @@ $(document).ready(function () {
       $("#campo_usuario").css("border", "1px solid #ced4da");
       $("#campo_senha").focus();
       $("#campo_senha").css("border", "1px solid red");
+      $(".attention").text("Please provide password!");
       return true;
     }
   }

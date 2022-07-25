@@ -76,7 +76,9 @@
                         required="requiored">
                 </div>
 
-                <button type="submit" class="btn btn-primary form-control" id="createUser">Sign up</button>
+                <button type="submit" class="btn btn-primary form-control" id="createUser">Sign
+                    up</button>
+
             </form>
         </div>
         <div class="col-md-4"></div>
