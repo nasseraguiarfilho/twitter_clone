@@ -103,11 +103,12 @@
 
 
         <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h4><a href="#">Friends</a></h4>
-                </div>
-            </div>
+            <form action="#" method="GET" class="form">
+                <input type="search" placeholder="Search for friends!" class="search-field" />
+                <button type="submit" class="search-button">
+                    <img src="imagens/zoom.png">
+                </button>
+            </form>
         </div>
 
     </div>
