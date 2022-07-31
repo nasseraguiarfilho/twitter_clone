@@ -21,6 +21,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: medium;
   font-style: italic;
+  background-color: rgba(218, 216, 216, 0.938);
 }
 
 .search-button {
@@ -28,12 +29,27 @@
   border: none;
   outline: none;
   margin-left: -37px;
+  margin-top: 13px;
 }
 
 .search-button img {
   width: 20px;
   height: 20px;
   object-fit: cover;
+}
+
+.search-box {
+  height: 80px;
+  width: 100%;
+  border-radius: 25px;
+  background-color: rgb(230, 228, 228);
+  text-align: center;
+  padding: 20px;
+  transition: width 1s, height 1s, background-color 1s, transform 1s;
+}
+
+.white {
+  background-color: white;
 }
 
 .b1 {

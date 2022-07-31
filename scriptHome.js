@@ -27,4 +27,15 @@ $(document).ready(function () {
   }
 
   atualizaTweet();
+
+  $("#find").focusin(function (e) {
+    $("#find").addClass("white");
+    $("#friends").addClass("search-box");
+    $("#friends").text("As you type, you will see your future friends here");
+  });
+
+  $("#find").focusout(function (e) {
+    $("#find").removeClass("white");
+    $("#friends").removeClass("search-box");
+  });
 });
