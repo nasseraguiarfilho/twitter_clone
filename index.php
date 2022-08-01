@@ -44,7 +44,7 @@
             <div id=" navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right navbaritems">
                     <li><a href="inscrevase.php">New User</a></li>
-                    <li class="<?= $error == "1" ? 'open' : '' ?>"><a id="entrar" data-target="#" href="#"
+                    <li class="<?= $error == "1" ? 'open' : '' ?>"><a id="entrar" name="entrar" data-target="#" href="#"
                             data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In</a>
                         <ul class="dropdown-menu loginMenu" aria-labelledby="entrar">
                             <div class="col-md-12">

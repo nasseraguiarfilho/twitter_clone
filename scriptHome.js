@@ -37,5 +37,20 @@ $(document).ready(function () {
   $("#find").focusout(function (e) {
     $("#find").removeClass("white");
     $("#friends").removeClass("search-box");
+    $("#friends").text("");
+  });
+
+  $("#find").keyup(function (e) {
+    var input = $(this).val();
+    if (input != "") {
+      $.ajax({
+        type: "POST",
+        url: "search.php",
+        data: { input: input },
+        success: function (response) {
+          $("#friends").text(response);
+        },
+      });
+    }
   });
 });

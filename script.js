@@ -5,6 +5,10 @@ $(document).ready(function () {
     } //don't let page reload if fields are empty
   });
 
+  $("#entrar").click(function () {
+    $("#campo_usuario").focus();
+  });
+
   function usernameEmpty() {
     if ($("#campo_usuario").val() == "") {
       $("#campo_senha").css("border", "1px solid #ced4da");

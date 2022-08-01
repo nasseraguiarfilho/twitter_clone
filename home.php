@@ -103,14 +103,13 @@
 
 
         <div class="col-md-3">
-            <form method="post" action="search.php" name="form-search" class="form">
+            <form method="post" name="form-search" class="form">
                 <input type="text" placeholder="Search for friends!" class="search-field" id="find" name="find">
                 <div class="search-button">
                     <img src="imagens/zoom.png">
                 </div>
             </form>
             <div id="friends">
-
             </div>
         </div>
 
