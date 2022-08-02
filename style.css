@@ -7,6 +7,10 @@
   color: black;
 }
 
+.fade-in-text {
+  animation: fadeIn 5s;
+}
+
 .form {
   display: flex;
   flex-direction: row;
@@ -15,7 +19,7 @@
   width: 100%;
   padding: 10px 35px 10px 15px;
   border: solid #1da1f2 1px;
-  border-radius: 100px;
+  border-radius: 5px;
   outline: none;
   height: 50px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -28,20 +32,30 @@
   background: transparent;
   border: none;
   outline: none;
-  margin-left: -37px;
-  margin-top: 13px;
 }
 
 .search-button img {
   width: 20px;
   height: 20px;
   object-fit: cover;
+  margin-left: -37px;
+  margin-top: 14px;
 }
 
-.search-box {
+.hint {
   height: 80px;
   width: 100%;
-  border-radius: 25px;
+  border-radius: 5px;
+  background-color: rgb(230, 228, 228);
+  text-align: center;
+  padding: 20px;
+  transition: width 1s, height 1s, background-color 1s, transform 1s;
+}
+
+.friends-field {
+  height: 460px;
+  width: 100%;
+  border-radius: 5px;
   background-color: rgb(230, 228, 228);
   text-align: center;
   padding: 20px;

@@ -30,27 +30,37 @@ $(document).ready(function () {
 
   $("#find").focusin(function (e) {
     $("#find").addClass("white");
-    $("#friends").addClass("search-box");
-    $("#friends").text("As you type, you will see your future friends here");
+    $("#friends").addClass("hint");
+    $(".fade-in-text").fadeIn();
+    $(".fade-in-text").text(
+      "As you type, you will see your future friends here"
+    );
   });
 
   $("#find").focusout(function (e) {
+    $(".fade-in-text").text("");
+    $(".fade-in-text").fadeOut();
+    $("#friends").removeClass("hint");
     $("#find").removeClass("white");
-    $("#friends").removeClass("search-box");
-    $("#friends").text("");
   });
 
   $("#find").keyup(function (e) {
+    $("#friends").removeClass("hint");
+    $("#friends").addClass("friends-field");
     var input = $(this).val();
     if (input != "") {
       $.ajax({
         type: "POST",
-        url: "search.php",
+        url: "search_friends.php",
         data: { input: input },
         success: function (response) {
           $("#friends").text(response);
         },
       });
+    } else {
+      $(".fade-in-text").text(
+        "As you type, you will see your future friends here"
+      );
     }
   });
 });

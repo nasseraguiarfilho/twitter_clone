@@ -110,6 +110,7 @@
                 </div>
             </form>
             <div id="friends">
+                <div class="fade-in-text"></div>
             </div>
         </div>
 
