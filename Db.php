@@ -56,6 +56,11 @@ class Db {
         $connection = $this -> connect();
         return "'" . $connection -> real_escape_string($value) . "'";
     }
+
+    public function quoteContains($value) {
+        $connection = $this -> connect();
+        return "'%" . $connection -> real_escape_string($value) . "%'";
+    }
 }
 
 ?>

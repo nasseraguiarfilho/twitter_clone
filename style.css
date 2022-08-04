@@ -25,7 +25,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: medium;
   font-style: italic;
-  background-color: rgba(218, 216, 216, 0.938);
+  background-color: rgb(230, 228, 228);
 }
 
 .search-button {
@@ -52,7 +52,7 @@
   transition: width 1s, height 1s, background-color 1s, transform 1s;
 }
 
-.friends-field {
+.friend-field {
   height: 460px;
   width: 100%;
   border-radius: 5px;
@@ -60,6 +60,15 @@
   text-align: center;
   padding: 20px;
   transition: width 1s, height 1s, background-color 1s, transform 1s;
+}
+
+.possibleFriend {
+  font-size: large;
+  width: 100%;
+  height: 46px;
+  text-align: left;
+  padding-left: 5px;
+  margin: auto;
 }
 
 .white {
