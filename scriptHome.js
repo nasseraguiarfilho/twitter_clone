@@ -42,6 +42,8 @@ $(document).ready(function () {
     $(".fade-in-text").fadeOut();
     $("#friends").removeClass("hint");
     $("#find").removeClass("white");
+    $("#friends").removeClass("friends-field");
+    $("#friends").text("");
   });
 
   $("#find").keyup(function (e) {
