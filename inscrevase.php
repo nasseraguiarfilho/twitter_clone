@@ -52,7 +52,6 @@
 
     <div class="container">
 
-        <br /><br />
 
         <div class="col-md-4"></div>
         <div class="col-md-4">
@@ -60,7 +59,7 @@
                 <h3>Sign up to see the latest news!</h3>
             </div>
             <br />
-            <form method="post" action="createUser.php" id="formCadastrarse">
+            <form method="post" id="formCadastrarse">
                 <div class="form-group">
                     <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Username"
                         required="requiored">
@@ -81,13 +80,6 @@
 
             </form>
         </div>
-        <div class="col-md-4"></div>
-
-        <div class="clearfix"></div>
-        <br />
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
 
     </div>
 

@@ -35,8 +35,39 @@ $(document).ready(function () {
       data: { input: input },
       success: function (response) {
         $(".friend-field").html(response);
+        addEventFollowButtons();
       },
     });
+  }
+
+  function addEventFollowButtons() {
+    $(".follow").click(function (e) {
+      var follow_id = $(this).attr("data-id_user");
+      addAsFriend(follow_id);
+    });
+  }
+
+  function addAsFriend(id) {
+    $.ajax({
+      type: "post",
+      url: "follow.php",
+      data: id,
+      success: function () {
+        buttonToFollowing(id);
+        incrementFriends();
+      },
+    });
+  }
+
+  function buttonToFollowing(id) {
+    var id = "#" + id;
+    $(id).removeClass("btn-primary");
+    $(id).addClass("btn-secondary");
+    $(id).text("Following");
+  }
+
+  function incrementFriends() {
+    //counta numero de amigos no bd e atualiza na tela
   }
 
   function cleanFields() {

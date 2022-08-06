@@ -72,10 +72,10 @@
                 <div class="panel-body">
                     <?php echo "<h4>@$user</h4>"; ?>
                     <hr />
-                    <div class="col-md-6">
+                    <div class="col-md-6" id="tweets">
                         TWEETS <br /> 1
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6" id="followers">
                         FOLLOWERS <br /> 1
                     </div>
 
