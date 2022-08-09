@@ -22,9 +22,21 @@ $sql = "SELECT * FROM usuarios AS u WHERE id <> $userId AND usuario LIKE $possib
 $result = $db -> select($sql);
 
  for ($i=0; $i < count($result); $i++) { 
-    echo '<a href="#" class="possibleFriend col-md-7">@'.$result[$i]['usuario'].'</a>';
+    if (isAlreadyFriend($result[$i]['id'])) {
+        echo '<a href="#" class="possibleFriend col-md-7">@'.$result[$i]['usuario'].'</a>';
+        echo '<button type="button" id='.$result[$i]['id'].' class="following btn btn-secondary btn-sm col-md-5" data-id_user='.$result[$i]['id'].'>Following</button>';
+        echo '<hr/><br/>';
+    } else {
+        echo '<a href="#" class="possibleFriend col-md-7">@'.$result[$i]['usuario'].'</a>';
     echo '<button type="button" id='.$result[$i]['id'].' class="follow btn btn-primary btn-sm col-md-5" data-id_user='.$result[$i]['id'].'>Follow</button>';
     echo '<hr/><br/>';
+    }
+    
+ }
+
+ function isAlreadyFriend($possibleFriend) {
+    return false;
+    //TODO
  }
 
 ?>

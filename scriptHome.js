@@ -35,15 +35,23 @@ $(document).ready(function () {
       data: { input: input },
       success: function (response) {
         $(".friend-field").html(response);
-        addEventFollowButtons();
+        handleFollowButton();
       },
     });
   }
 
-  function addEventFollowButtons() {
+  function handleFollowButton() {
     $(".follow").click(function (e) {
-      var follow_id = $(this).attr("data-id_user");
-      addAsFriend(follow_id);
+      var id = $(this).attr("id");
+      addAsFriend(id);
+      unfollowOption(id);
+    });
+  }
+
+  function followOption(id) {
+    $(id).click(function () {
+      addAsFriend(id);
+      unfollowOption(id);
     });
   }
 
@@ -51,23 +59,45 @@ $(document).ready(function () {
     $.ajax({
       type: "post",
       url: "follow.php",
-      data: id,
+      data: { id: id },
       success: function () {
         buttonToFollowing(id);
-        incrementFriends();
+        incrementFriends(1);
       },
     });
   }
 
   function buttonToFollowing(id) {
     var id = "#" + id;
-    $(id).removeClass("btn-primary");
-    $(id).addClass("btn-secondary");
+    $(id).removeClass("btn-primary follow");
+    $(id).addClass("btn-secondary following");
     $(id).text("Following");
   }
 
-  function incrementFriends() {
+  function incrementFriends(n) {
     //counta numero de amigos no bd e atualiza na tela
+  }
+
+  function unfollowOption(id) {
+    $(".following").click(function (e) {
+      $.ajax({
+        type: "post",
+        url: "unfollow.php",
+        data: { id: id },
+        success: function () {
+          buttonTofollow(id);
+          incrementFriends(-1);
+          followOption(id);
+        },
+      });
+    });
+  }
+
+  function buttonTofollow(id) {
+    var id = "#" + id;
+    $(id).removeClass("btn-secondary following");
+    $(id).addClass("btn-primary follow");
+    $(id).text("Follow");
   }
 
   function cleanFields() {
