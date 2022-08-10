@@ -19,6 +19,6 @@ $userId = $userId[0]['id'];
 
 $result = $db -> query("DELETE FROM user_followers WHERE id_usuario = $userId AND id_follower = $friendId");
 
-echo $result;
+var_dump( $result);
 
 ?>

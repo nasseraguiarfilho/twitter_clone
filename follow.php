@@ -17,14 +17,9 @@ $friendId = $_POST['id'];
 $userId = $db -> select("SELECT id FROM usuarios WHERE usuario = $user");
 $userId = $userId[0]['id'];
 
-$sql = "SELECT u.*, uf.* FROM usuarios AS u LEFT JOIN user_followers AS uf ON (uf.id_usuario = $userId AND u.id = uf.id_follower) WHERE u.usuario like $possibleFriend AND u.id <> $userId order by usuario";
-
-$result = $db ->select($sql);
+$result = $db -> query("INSERT INTO user_followers (id_usuario, id_follower) VALUES ($userId, $friendId)");
 
 
-$addFriend = $db -> query("INSERT INTO user_followers (id_usuario, id_follower) VALUES ($userId, $friendId)");
-
-
-echo $addFriend;
+echo $result;
 
 ?>

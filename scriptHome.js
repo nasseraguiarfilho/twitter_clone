@@ -49,14 +49,6 @@ $(document).ready(function () {
     });
   }
 
-  function unfollowButtonClickEvent() {
-    $(".btn-unfollow").click(function (e) {
-      var id = $(this).data("id_user");
-      removeFriend(id);
-      buttonToFollow(id);
-    });
-  }
-
   function addFriend(id) {
     $.ajax({
       type: "post",
@@ -77,16 +69,22 @@ $(document).ready(function () {
     //counta numero de amigos no bd e atualiza na tela
   }
 
+  function unfollowButtonClickEvent() {
+    $(".btn-unfollow").click(function (e) {
+      var id = $(this).data("id_user");
+      removeFriend(id);
+      buttonToFollow(id);
+    });
+  }
+
   function removeFriend(id) {
-    $(".following").click(function (e) {
-      $.ajax({
-        type: "post",
-        url: "unfollow.php",
-        data: { id: id },
-        success: function () {
-          incrementFriends(-1);
-        },
-      });
+    $.ajax({
+      type: "post",
+      url: "unfollow.php",
+      data: { id: id },
+      success: function () {
+        incrementFriends(-1);
+      },
     });
   }
 
