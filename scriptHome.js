@@ -35,27 +35,27 @@ $(document).ready(function () {
       data: { input: input },
       success: function (response) {
         $(".friend-field").html(response);
-        handleFollowButton();
+        followButton();
+        unfollowButton();
       },
     });
   }
 
-  function handleFollowButton() {
+  function followButton() {
     $(".follow").click(function (e) {
       var id = $(this).attr("id");
-      addAsFriend(id);
-      unfollowOption(id);
+      addFriend(id);
     });
   }
 
-  function followOption(id) {
-    $(id).click(function () {
-      addAsFriend(id);
-      unfollowOption(id);
+  function unfollowButton() {
+    $(".following").click(function (e) {
+      var id = $(this).attr("id");
+      removeFriend(id);
     });
   }
 
-  function addAsFriend(id) {
+  function addFriend(id) {
     $.ajax({
       type: "post",
       url: "follow.php",
@@ -78,7 +78,7 @@ $(document).ready(function () {
     //counta numero de amigos no bd e atualiza na tela
   }
 
-  function unfollowOption(id) {
+  function removeFriend(id) {
     $(".following").click(function (e) {
       $.ajax({
         type: "post",
@@ -87,7 +87,6 @@ $(document).ready(function () {
         success: function () {
           buttonTofollow(id);
           incrementFriends(-1);
-          followOption(id);
         },
       });
     });
