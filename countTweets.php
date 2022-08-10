@@ -11,12 +11,15 @@ $db = new Db();
 $db->connect();
 
 $user = $_SESSION['usuario'];
-$friendId = $_POST['id']; 
 
 //getting id from the user
 $userId = $db -> select("SELECT id FROM usuarios WHERE usuario = $user");
 $userId = $userId[0]['id'];
 
-$result = $db -> query("DELETE FROM user_followers WHERE id_usuario = $userId AND id_follower = $friendId");
+$sql = "SELECT * from tweet where id_usuario = $userId";
+
+$result = $db -> select($sql);
+
+echo count($result);
 
 ?>

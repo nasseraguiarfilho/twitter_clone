@@ -1,5 +1,36 @@
 $(document).ready(function () {
-  atualizaTweet();
+  updateTweets();
+  updateFollowers();
+  updateTimeline();
+
+  function updateTweets() {
+    $.ajax({
+      type: "post",
+      url: "countTweets.php",
+      success: function (response) {
+        $("#countTweets").text(response);
+      },
+    });
+  }
+
+  function updateFollowers() {
+    $.ajax({
+      type: "post",
+      url: "countFollowers.php",
+      success: function (response) {
+        $("#countFollowers").text(response);
+      },
+    });
+  }
+
+  function updateTimeline() {
+    $.ajax({
+      url: "get_tweet.php",
+      success: function (response) {
+        $("#tweets").html(response);
+      },
+    });
+  }
 
   $("#button_tweet").click(function (e) {
     var text_tweet = $("#text_tweet").val();
@@ -9,7 +40,9 @@ $(document).ready(function () {
         url: "include_tweet.php",
         data: $("#form_tweet").serialize(),
         success: function () {
-          atualizaTweet();
+          cleanTweetTextField();
+          updateTimeline();
+          updateTweets();
         },
       });
     }
@@ -19,13 +52,8 @@ $(document).ready(function () {
     return t.length > 0;
   }
 
-  function atualizaTweet() {
-    $.ajax({
-      url: "get_tweet.php",
-      success: function (response) {
-        $("#tweets").html(response);
-      },
-    });
+  function cleanTweetTextField() {
+    $("#text_tweet").val("");
   }
 
   function populateFriends(input) {
@@ -55,7 +83,7 @@ $(document).ready(function () {
       url: "follow.php",
       data: { id: id },
       success: function () {
-        incrementFriends(1);
+        updateFollowers();
       },
     });
   }
@@ -83,7 +111,7 @@ $(document).ready(function () {
       url: "unfollow.php",
       data: { id: id },
       success: function () {
-        incrementFriends(-1);
+        updateFollowers();
       },
     });
   }

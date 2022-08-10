@@ -8,20 +8,6 @@
     $user = $_SESSION['usuario'];
     $user = str_replace(['"',"'"], "", $user);
 
-    function tweets() {
-        for($i = 0; $i < 4; $i++){
-            htmlForTweet();
-          }
-    }
-
-    function htmlForTweet() {
-        //TODO get the tweets from his friends and post on his homepage
-        echo '
-           
-            ';
-    }
-    
-
 ?>
 
 <!DOCTYPE HTML>
@@ -72,11 +58,14 @@
                 <div class="panel-body">
                     <?php echo "<h4>@$user</h4>"; ?>
                     <hr />
-                    <div class="col-md-6" id="countTweets">
-                        TWEETS <br /> 1
+                    <div class="col-md-6">
+                        TWEETS <br />
+                        <div id="countTweets"></div>
                     </div>
-                    <div class="col-md-6" id="countFollowers">
-                        FOLLOWERS <br /> 1
+                    <div class="col-md-6">
+                        FOLLOWERS <br />
+                        <div id="countFollowers">
+                        </div>
                     </div>
 
                 </div>

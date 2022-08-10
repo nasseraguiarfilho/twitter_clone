@@ -72,7 +72,7 @@
     <div class="container welcome">
         <h1>Welcome to Twitter!</h1>
         <p>
-        <h4>See what's going on right now..</h3>
+        <h4>Sign in to see what's going on right now..</h3>
             </p>
             <div class="clearfix"></div>
     </div>
