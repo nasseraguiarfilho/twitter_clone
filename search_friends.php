@@ -25,11 +25,13 @@ $result = $db -> select($sql);
  for ($i=0; $i < count($result); $i++) { 
     if (isAlreadyFriend($result[$i]['id_user_follower'])) {
     echo '<a href="#" class="possibleFriend col-md-7">@'.$result[$i]['usuario'].'</a>';
-    echo '<button type="button" id='.$result[$i]['id'].' class="following btn btn-secondary btn-sm col-md-5" data-id_user='.$result[$i]['id'].'>Following</button>';
+    echo '<button type="button" id=follow_button_'.$result[$i]['id'].' class="btn-follow btn btn-primary btn-sm col-md-5" data-id_user='.$result[$i]['id'].'>Follow</button>';
+    echo '<button type="button" id=unfollow_button_'.$result[$i]['id'].' style="display:none" class="btn-unfollow btn btn-secondary btn-sm col-md-5" data-id_user='.$result[$i]['id'].'>Following</button>';
     echo '<hr/><br/>';
     } else {
     echo '<a href="#" class="possibleFriend col-md-7">@'.$result[$i]['usuario'].'</a>';
-    echo '<button type="button" id='.$result[$i]['id'].' class="follow btn btn-primary btn-sm col-md-5" data-id_user='.$result[$i]['id'].'>Follow</button>';
+    echo '<button type="button" id=follow_button_'.$result[$i]['id'].' class="btn-follow btn btn-primary btn-sm col-md-5" data-id_user='.$result[$i]['id'].'>Follow</button>';
+    echo '<button type="button" id=unfollow_button_'.$result[$i]['id'].' style="display:none" class="btn-unfollow btn btn-secondary btn-sm col-md-5" data-id_user='.$result[$i]['id'].'>Following</button>';
     echo '<hr/><br/>';
 
     }

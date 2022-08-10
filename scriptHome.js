@@ -35,23 +35,25 @@ $(document).ready(function () {
       data: { input: input },
       success: function (response) {
         $(".friend-field").html(response);
-        followButton();
-        unfollowButton();
+        followButtonClickEvent();
+        unfollowButtonClickEvent();
       },
     });
   }
 
-  function followButton() {
-    $(".follow").click(function (e) {
-      var id = $(this).attr("id");
+  function followButtonClickEvent() {
+    $(".btn-follow").click(function (e) {
+      var id = $(this).data("id_user");
       addFriend(id);
+      buttonToFollowing(id);
     });
   }
 
-  function unfollowButton() {
-    $(".following").click(function (e) {
-      var id = $(this).attr("id");
+  function unfollowButtonClickEvent() {
+    $(".btn-unfollow").click(function (e) {
+      var id = $(this).data("id_user");
       removeFriend(id);
+      buttonToFollow(id);
     });
   }
 
@@ -61,17 +63,14 @@ $(document).ready(function () {
       url: "follow.php",
       data: { id: id },
       success: function () {
-        buttonToFollowing(id);
         incrementFriends(1);
       },
     });
   }
 
   function buttonToFollowing(id) {
-    var id = "#" + id;
-    $(id).removeClass("btn-primary follow");
-    $(id).addClass("btn-secondary following");
-    $(id).text("Following");
+    $("#follow_button_" + id).hide();
+    $("#unfollow_button_" + id).show();
   }
 
   function incrementFriends(n) {
@@ -85,18 +84,15 @@ $(document).ready(function () {
         url: "unfollow.php",
         data: { id: id },
         success: function () {
-          buttonTofollow(id);
           incrementFriends(-1);
         },
       });
     });
   }
 
-  function buttonTofollow(id) {
-    var id = "#" + id;
-    $(id).removeClass("btn-secondary following");
-    $(id).addClass("btn-primary follow");
-    $(id).text("Follow");
+  function buttonToFollow(id) {
+    $("#unfollow_button_" + id).hide();
+    $("#follow_button_" + id).show();
   }
 
   function cleanFields() {
