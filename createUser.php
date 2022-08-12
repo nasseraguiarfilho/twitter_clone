@@ -14,7 +14,7 @@
 
 
     if(usernameFreeToUse($usuario) && emailFreeToUse($email)) {
-        echo "user created successfully!"; 
+        echo $usuario; 
     } else {
         echo "User already exists";
     }

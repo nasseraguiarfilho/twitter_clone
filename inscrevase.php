@@ -55,11 +55,11 @@
 
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <div class="text-center">
+            <div class="text-center welcome">
                 <h3>Sign up to see the latest news!</h3>
             </div>
             <br />
-            <form method="post" id="formCadastrarse">
+            <form id="formCadastrarse">
                 <div class="form-group">
                     <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Username"
                         required="requiored">
@@ -75,7 +75,7 @@
                         required="requiored">
                 </div>
 
-                <button type="submit" class="btn btn-primary form-control" id="createUser">Sign
+                <button type="button" class="btn btn-primary form-control" id="createUser">Sign
                     up</button>
 
             </form>

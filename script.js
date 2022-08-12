@@ -23,4 +23,24 @@ $(document).ready(function () {
       return true;
     }
   }
+
+  $("#createUser").click(function (e) {
+    $.ajax({
+      type: "post",
+      url: "createUser.php",
+      data: $("#formCadastrarse").serialize(),
+      success: function (response) {
+        welcomeMessage(response);
+      },
+    });
+  });
+
+  function welcomeMessage(response) {
+    $("#formCadastrarse").remove();
+    $(".welcome").html(
+      "<h4>Welcome aboard," +
+        response +
+        "! Sign in to see the latest news..</h4>"
+    );
+  }
 });

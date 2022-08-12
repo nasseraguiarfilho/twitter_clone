@@ -28,8 +28,20 @@ $(document).ready(function () {
       url: "get_tweet.php",
       success: function (response) {
         $("#tweets").html(response);
+        handleButtonClickEvent();
       },
     });
+  }
+
+  function handleButtonClickEvent() {
+    $(".button-more-options").click(function (e) {
+      var id_tweet = $(this).data("id_tweet");
+      openOptionsTweet(id_tweet);
+    });
+  }
+
+  function openOptionsTweet(id_tweet) {
+    //TODO open a white box with some options (delete, share, etc)
   }
 
   $("#button_tweet").click(function (e) {

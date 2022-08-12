@@ -58,13 +58,13 @@
                 <div class="panel-body">
                     <?php echo "<h4>@$user</h4>"; ?>
                     <hr />
-                    <div class="col-md-6">
-                        TWEETS <br />
-                        <div id="countTweets"></div>
+                    <div class="col-md-6 text-center">
+                        TWEETS
+                        <div id="countTweets" class="text-center"></div>
                     </div>
-                    <div class="col-md-6">
-                        FOLLOWERS <br />
-                        <div id="countFollowers">
+                    <div class="col-md-6 text-center">
+                        FOLLOWERS
+                        <div id="countFollowers" class="text-center">
                         </div>
                     </div>
 

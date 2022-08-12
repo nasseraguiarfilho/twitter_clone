@@ -7,6 +7,31 @@
   color: black;
 }
 
+.dot {
+  height: 5px;
+  width: 5px;
+  margin: 1px;
+  background-color: #bbb;
+  border-radius: 50%;
+  float: right;
+}
+
+.more-options {
+  background-color: white;
+  border: none;
+  color: white;
+  text-align: right;
+  font-size: 16px;
+  cursor: pointer;
+  float: right;
+  margin-right: -10px;
+}
+
+.more-options:hover {
+  background-color: solid #c2222f 1px;
+  color: rgb(103, 103, 255);
+}
+
 .fade-in-text {
   animation: fadeIn 5s;
 }
