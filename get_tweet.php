@@ -16,7 +16,9 @@ $user = $_SESSION['usuario'];
 $userId = $db -> select("SELECT id FROM usuarios WHERE usuario = $user");
 $userId = $userId[0]['id'];
 
-$sql = "SELECT DATE_FORMAT(t.data_inclusao, '%b %d %Y %T') AS dt, t.tweet, u.usuario, t.id_tweet FROM tweet AS t JOIN usuarios AS u ON (t.id_usuario = u.id) WHERE id_usuario = $userId ORDER BY data_inclusao DESC";
+$sql = "SELECT DATE_FORMAT(t.data_inclusao, '%b %d %Y %T') AS dt, t.tweet, u.usuario, t.id_tweet FROM tweet AS t JOIN usuarios AS u ON (t.id_usuario = u.id) 
+WHERE id_usuario = $userId OR id_usuario IN (select id_follower FROM user_followers WHERE id_usuario = $userId)
+ ORDER BY data_inclusao DESC";
 
 $result = $db -> select($sql);
 
@@ -24,7 +26,7 @@ $result = $db -> select($sql);
 //populating timeline with the tweets on database
  for ($i=0; $i < count($result); $i++) { 
     echo '<text class="list-group-item"> ';
-        echo '<h4 class="list-group-item-heading col-6">'.$result[$i]['usuario'].' <small>'.$result[$i]['dt'].' </small> <button class="more-options">
+        echo '<h4 class="list-group-item-heading col-6">'.$result[$i]['usuario'].' <small>'.$result[$i]['dt'].' </small> <button class="button-more-options">
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>

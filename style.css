@@ -16,7 +16,7 @@
   float: right;
 }
 
-.more-options {
+.button-more-options {
   background-color: white;
   border: none;
   color: white;
@@ -27,7 +27,7 @@
   margin-right: -10px;
 }
 
-.more-options:hover {
+.button-more-options:hover {
   background-color: solid #c2222f 1px;
   color: rgb(103, 103, 255);
 }

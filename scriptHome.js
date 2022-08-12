@@ -41,7 +41,7 @@ $(document).ready(function () {
   }
 
   function openOptionsTweet(id_tweet) {
-    //TODO open a white box with some options (delete, share, etc)
+    //TODO maybe in the future create some features for the dots (button-more-options)
   }
 
   $("#button_tweet").click(function (e) {
@@ -103,10 +103,6 @@ $(document).ready(function () {
   function buttonToFollowing(id) {
     $("#follow_button_" + id).hide();
     $("#unfollow_button_" + id).show();
-  }
-
-  function incrementFriends(n) {
-    //counta numero de amigos no bd e atualiza na tela
   }
 
   function unfollowButtonClickEvent() {
